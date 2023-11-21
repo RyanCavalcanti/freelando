@@ -1,47 +1,42 @@
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react'
 
 const tema = {
     cores: {
         branco: '#FFF',
-        atencao: '#',
+        atencao: '',
         focus: '#B009FF',
         primarias: {
             a: '#5754ED',
             b: '#D93114',
-            c: '#'
+            c: ''
         },
         secundarias: {
             a: '#F8F8FD',
-            b: '#',
-            c: '#'
+            b: '',
+            c: ''
         },
         neutras: {
             a: '#373737',
-            b: '#',
-            c: '#',
-            d: '#'
+            b: '',
+            c: '',
+            d: ''
         },
         dark: {
-            a: '#',
-            b: '#',
+            a: '',
+            b: '#B61B00'
         }
     },
     espacamentos: {
-        xxs: '4px',
-        xs: '8px',
-        s: '16px',
-        m: '24px',
-        l: '32px',
-        xl: '48px',
-        xxl: '64px',
+       xs: '8px',
+       s : '16px',
+       l : '32px',
+       xl: '48px'
     },
     fontFamily: "'Montserrat', sans-serif"
 }
 
 export const ProvedorTema = ({ children }) => {
-    return(
-        <ThemeProvider theme={tema}>
-            { children }
-        </ThemeProvider>
-    )
+    return <ThemeProvider theme={tema}>
+        { children }
+    </ThemeProvider>
 }

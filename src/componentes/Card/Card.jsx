@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const DivEstilizada = styled.div`
     padding: ${props => props.theme.espacamentos.l};
@@ -9,9 +9,7 @@ const DivEstilizada = styled.div`
 `
 
 export const Card = ({ children }) => {
-    return(
-        <DivEstilizada>
-            { children }
-        </DivEstilizada>
-    )
+    return (<DivEstilizada>
+        {children}
+    </DivEstilizada>)
 }
