@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const LinkPrimario = styled.a`
+const LinkPrimario = styled.span`
     cursor: pointer;
     font-weight: 400;
     font-size: 20px;
@@ -11,7 +11,7 @@ const LinkPrimario = styled.a`
         color: ${props => props.theme.cores.dark.a};
     }
 `
-const LinkSecundario = styled.a`
+const LinkSecundario = styled.span`
     cursor: pointer;
     font-weight: 400;
     font-size: 16px;
@@ -22,13 +22,18 @@ const LinkSecundario = styled.a`
         border-bottom: 1px solid ${props => props.theme.cores.primarias.b};
     }
 `
-export const Link = ({ children, variante = 'primario' }) => {
+export const Link = ({ children, variante = 'primario', onClick = null }) => {
+    const lidaComOClick = () => {
+        if (onClick) {
+            onClick()
+        }
+    }
     if (variante === 'primario') {
-        return <LinkPrimario variante={variante}>
+        return <LinkPrimario onClick={lidaComOClick} variante={variante}>
             {children}
         </LinkPrimario>
     }
-    return <LinkSecundario variante={variante}>
+    return <LinkSecundario onClick={lidaComOClick} variante={variante}>
         {children}
     </LinkSecundario>
 }
